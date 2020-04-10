@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "951324176811",
+    "firebase_url": "https://portfolio-8e0e3.firebaseio.com",
+    "project_id": "portfolio-8e0e3",
+    "storage_bucket": "portfolio-8e0e3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:951324176811:android:7f969e1290d7f052e962ee",
+        "android_client_info": {
+          "package_name": "com.ludviglundh.portfolio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "951324176811-qg8jqs7kkfubnrlicg1tvbokld1ruhf8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyFjHrteAZNZN0THYVLmjB-JzDN_AaWbE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "951324176811-qg8jqs7kkfubnrlicg1tvbokld1ruhf8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "951324176811-83st9qms1l97dpbj22abi53aaanc0p97.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.ludviglundh.portfolio"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
