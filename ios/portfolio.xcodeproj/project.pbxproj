@@ -18,6 +18,10 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* portfolioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* portfolioTests.m */; };
 		35FBB4D554E786812E81372B /* libPods-portfolio-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A4C7C7434F4753226B114F /* libPods-portfolio-tvOSTests.a */; };
+		8C14A5672440DF6B009DB771 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C14A5662440DF6B009DB771 /* GoogleService-Info.plist */; };
+		8C14A5682440DF6B009DB771 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C14A5662440DF6B009DB771 /* GoogleService-Info.plist */; };
+		8C14A5692440DF6B009DB771 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C14A5662440DF6B009DB771 /* GoogleService-Info.plist */; };
+		8C14A56A2440DF6B009DB771 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C14A5662440DF6B009DB771 /* GoogleService-Info.plist */; };
 		D30075C02ECC58025D656230 /* libPods-portfolio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 733C873EC78063FF8C30A384 /* libPods-portfolio.a */; };
 		FB43DD030A24C674D2BB99B6 /* libPods-portfolio-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CC14DCDF4239D76A37BE320 /* libPods-portfolio-tvOS.a */; };
 /* End PBXBuildFile section */
@@ -61,6 +65,7 @@
 		5CC14DCDF4239D76A37BE320 /* libPods-portfolio-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-portfolio-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		733C873EC78063FF8C30A384 /* libPods-portfolio.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-portfolio.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		759CB5031E9B12FD14100E2D /* Pods-portfolio-portfolioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-portfolio-portfolioTests.release.xcconfig"; path = "Target Support Files/Pods-portfolio-portfolioTests/Pods-portfolio-portfolioTests.release.xcconfig"; sourceTree = "<group>"; };
+		8C14A5662440DF6B009DB771 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		92B24280F3BD8B8ED753297E /* Pods-portfolio-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-portfolio-tvOS.release.xcconfig"; path = "Target Support Files/Pods-portfolio-tvOS/Pods-portfolio-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		A5A4C7C7434F4753226B114F /* libPods-portfolio-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-portfolio-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFCECE3A1CCF4DE6649BA20 /* Pods-portfolio-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-portfolio-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-portfolio-tvOSTests/Pods-portfolio-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +130,7 @@
 		13B07FAE1A68108700A75B9A /* portfolio */ = {
 			isa = PBXGroup;
 			children = (
+				8C14A5662440DF6B009DB771 /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -230,8 +236,8 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				F12AA579A527627316DAE2DB /* [CP-User] [RNFB] Core Configuration */,
-				482A6F51497FBF5A8A1E7B50 /* [CP-User] [RNFB] Crashlytics Configuration */,
 				8C14A5652440CB36009DB771 /* ShellScript */,
+				99F5D3743D91F149F66C6C86 /* [CP-User] [RNFB] Crashlytics Configuration */,
 			);
 			buildRules = (
 			);
@@ -333,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C14A5682440DF6B009DB771 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +349,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				8C14A5672440DF6B009DB771 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
+				8C14A5692440DF6B009DB771 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +366,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C14A56A2440DF6B009DB771 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,16 +445,6 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		482A6F51497FBF5A8A1E7B50 /* [CP-User] [RNFB] Crashlytics Configuration */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "[CP-User] [RNFB] Crashlytics Configuration";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\nif [[ ${PODS_ROOT} ]]; then\n  echo \"info: Exec Fabric Run from Pods\"\n  \"${PODS_ROOT}/Fabric/run\"\nelse\n  echo \"info: Exec Fabric Run from framework\"\n  \"${PROJECT_DIR}/Fabric.framework/run\"\nfi\n";
-		};
 		8C14A5652440CB36009DB771 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -461,6 +461,16 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
+		99F5D3743D91F149F66C6C86 /* [CP-User] [RNFB] Crashlytics Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] [RNFB] Crashlytics Configuration";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\nif [[ ${PODS_ROOT} ]]; then\n  echo \"info: Exec Fabric Run from Pods\"\n  \"${PODS_ROOT}/Fabric/run\"\nelse\n  echo \"info: Exec Fabric Run from framework\"\n  \"${PROJECT_DIR}/Fabric.framework/run\"\nfi\n";
 		};
 		A3F6052A8CAE3A78214E755D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
