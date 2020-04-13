@@ -1,16 +1,17 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {Text} from 'react-native';
+import DarkThemeToggle from '../services/theme/DarkThemeToggle';
 import styled from 'styled-components/native';
 
 const Screen = styled.View`
   flex-grow: 1;
-  padding: 20px;
   background-color: ${props => props.theme.screenBackgrounds.primary};
+  alignItems: center;
 `;
 
 const Content = styled.View`
   position: absolute;
+  alignItems: center;
   top: 50%;
   left: 45%;
 `;
@@ -23,7 +24,8 @@ export default function SettingsScreen() {
   return (
     <Screen>
       <Content>
-        <Header>Homescreen</Header>
+        <Header>Press to toggle theme></Header>
+        <DarkThemeToggle />
       </Content>
     </Screen>
   );

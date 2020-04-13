@@ -4,7 +4,8 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Homescreen from '../screens/Home.screen.js';
-import DetailsScreen from '../screens/Details.screen.js';
+import Settingsscreen from '../screens/Settings.screen.js';
+
 
 const RootStack = createBottomTabNavigator(
   {
@@ -16,11 +17,11 @@ const RootStack = createBottomTabNavigator(
         ),
       }),
     },
-    Details: {
-      screen: DetailsScreen,
+    Settings: {
+      screen: Settingsscreen,
       navigationOptions: () => ({
         tabBarIcon: ({tintColor, forcused}) => (
-          <Icon name="rocket" color={tintColor} size={25} />
+          <Icon name="cog" color={tintColor} size={25} />
         ),
       }),
     },
@@ -31,7 +32,7 @@ const RootStack = createBottomTabNavigator(
       activeTintColor: 'tomato',
       inactiveTintColor: 'gray',
       style: {
-        backgroundColor: 'white',
+        backgroundColor: 'transparent',
       },
     },
     initialRouteName: 'Home',

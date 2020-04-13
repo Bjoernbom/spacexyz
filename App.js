@@ -7,16 +7,19 @@
  */
 
 import React from 'react';
-import AppContainer from './app/navigation/Navigation';
 import {Provider} from 'react-redux';
-import store from './app/store/ConfigureStore';
+import AppContainer from './app/navigation/Navigation';
+import {createStore} from './app/store/store';
+import ThemeProvider from './app/services/theme/ThemeProvider';
 
-const App = () => {
+export default function App() {
+  const store = createStore();
+
   return (
     <Provider store={store}>
-      <AppContainer />
+      <ThemeProvider>
+        <AppContainer />
+      </ThemeProvider>
     </Provider>
   );
-};
-
-export default App;
+}
