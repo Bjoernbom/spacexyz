@@ -3,9 +3,13 @@ import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {ThemeContext} from 'styled-components';
+import {SCREEN_NAMES} from '../constants';
 
 import Homescreen from '../screens/Home.screen.js';
 import Settingsscreen from '../screens/Settings.screen.js';
+import ContactScreen from '../screens/Contact.screen';
+import CoolStuffScreen from '../screens/CoolStuff.screen';
+import NerdStuffScreen from '../screens/NerdStuff.screen';
 
 const Tab = createBottomTabNavigator();
 
@@ -13,12 +17,26 @@ function getTabIcon(screen) {
   let name;
 
   switch (screen.name) {
-    case 'Home':
+    case SCREEN_NAMES.HOME:
       name = 'home';
       break;
-    case 'Settings':
-      name = 'Settings';
+
+    case SCREEN_NAMES.SETTINGS:
+      name = 'cog';
       break;
+
+    case SCREEN_NAMES.CONTACT:
+      name = 'book';
+      break;
+
+    case SCREEN_NAMES.COOL_STUFF:
+      name = 'rocket';
+      break;
+
+    case SCREEN_NAMES.NERD_STUFF:
+      name = 'music';
+      break;
+
     default:
   }
 
@@ -46,23 +64,36 @@ export default function Router() {
           tabBarIcon: ({focused, color, size}) => {
             const iconName = getTabIcon(route);
 
-            return <Icon name={iconName} color={color} size={size} />;
+            return (
+              <Icon
+                name={iconName}
+                color={color}
+                size={iconName === 'home' ? 36 : 22}
+              />
+            );
           },
         })}
         tabBarOptions={{
-          activeTintColor: theme.text.primary,
-          inactiveTintColor: theme.text.primary,
+          activeTintColor: theme.tabBar.active,
+          inactiveTintColor: theme.tabBar.inActive,
           style: {
             borderTopColor: 'transparent',
             backgroundColor: theme.screenBackgrounds.primary,
           },
           initialRouteName: 'Home',
         }}>
-        <Tab.Screen name="Home" component={Homescreen} />
-        <Tab.Screen name="Settings" component={Settingsscreen} />
+        <Tab.Screen name={SCREEN_NAMES.CONTACT} component={ContactScreen} />
+        <Tab.Screen
+          name={SCREEN_NAMES.COOL_STUFF}
+          component={CoolStuffScreen}
+        />
+        <Tab.Screen name={SCREEN_NAMES.HOME} component={Homescreen} />
+        <Tab.Screen
+          name={SCREEN_NAMES.NERD_STUFF}
+          component={NerdStuffScreen}
+        />
+        <Tab.Screen name={SCREEN_NAMES.SETTINGS} component={Settingsscreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
 }
-// const Router = createAppContainer(RootStack);
-// export default Router;
