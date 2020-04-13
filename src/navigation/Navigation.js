@@ -5,10 +5,10 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {ThemeContext} from 'styled-components';
 import {SCREEN_NAMES} from '../app/constants';
 
-import Homescreen from '../screens/Home.screen.js';
-import Settingsscreen from '../screens/Settings.screen.js';
-import ContactScreen from '../screens/Contact.screen';
-import CoolStuffScreen from '../screens/CoolStuff.screen';
+import DashboardScreen from '../features/dashboard/DashboardScreen';
+import Settingsscreen from '../features/settings/SettingsScreen';
+import ContactScreen from '../features/contact/ContactScreen';
+import RocketsScreen from '../features/rockets/RocketsScreen';
 import NerdStuffScreen from '../screens/NerdStuff.screen';
 
 const Tab = createBottomTabNavigator();
@@ -17,7 +17,7 @@ function getTabIcon(screen) {
   let name;
 
   switch (screen.name) {
-    case SCREEN_NAMES.HOME:
+    case SCREEN_NAMES.DASHBOARD:
       name = 'home';
       break;
 
@@ -29,7 +29,7 @@ function getTabIcon(screen) {
       name = 'book';
       break;
 
-    case SCREEN_NAMES.COOL_STUFF:
+    case SCREEN_NAMES.ROCKETS:
       name = 'rocket';
       break;
 
@@ -60,7 +60,7 @@ export default function Router() {
   return (
     <NavigationContainer theme={navTheme}>
       <Tab.Navigator
-        initialRouteName={SCREEN_NAMES.HOME}
+        initialRouteName={SCREEN_NAMES.DASHBOARD}
         screenOptions={({route}) => ({
           tabBarIcon: ({focused, color, size}) => {
             const iconName = getTabIcon(route);
@@ -82,16 +82,13 @@ export default function Router() {
             backgroundColor: theme.screenBackgrounds.primary,
           },
         }}>
-        <Tab.Screen name={SCREEN_NAMES.CONTACT} component={ContactScreen} />
-        <Tab.Screen
-          name={SCREEN_NAMES.COOL_STUFF}
-          component={CoolStuffScreen}
-        />
-        <Tab.Screen name={SCREEN_NAMES.HOME} component={Homescreen} />
+        <Tab.Screen name={SCREEN_NAMES.ROCKETS} component={RocketsScreen} />
         <Tab.Screen
           name={SCREEN_NAMES.NERD_STUFF}
           component={NerdStuffScreen}
         />
+        <Tab.Screen name={SCREEN_NAMES.DASHBOARD} component={DashboardScreen} />
+        <Tab.Screen name={SCREEN_NAMES.CONTACT} component={ContactScreen} />
         <Tab.Screen name={SCREEN_NAMES.SETTINGS} component={Settingsscreen} />
       </Tab.Navigator>
     </NavigationContainer>

@@ -19,11 +19,11 @@ const Header = styled.Text`
   color: ${props => props.theme.text.primary};
 `;
 
-export default function SettingsScreen() {
+export default function DashboardScreen() {
   return (
     <Screen>
       <Content>
-        <Header>Homescreen</Header>
+        <Header>Dashboard</Header>
       </Content>
     </Screen>
   );

@@ -1,16 +1,16 @@
 import React from 'react';
-import DarkThemeToggle from '../services/theme/DarkThemeToggle';
+import {connect} from 'react-redux';
+import {View, Text, TouchableOpacity} from 'react-native';
 import styled from 'styled-components/native';
 
 const Screen = styled.View`
   flex-grow: 1;
+  padding: 20px;
   background-color: ${props => props.theme.screenBackgrounds.primary};
-  alignitems: center;
 `;
 
 const Content = styled.View`
   position: absolute;
-  alignitems: center;
   top: 50%;
   left: 45%;
 `;
@@ -19,12 +19,11 @@ const Header = styled.Text`
   color: ${props => props.theme.text.primary};
 `;
 
-export default function SettingsScreen() {
+export default function RocketsScreen() {
   return (
     <Screen>
       <Content>
-        <Header>Press to toggle theme></Header>
-        <DarkThemeToggle />
+        <Header>Rockets</Header>
       </Content>
     </Screen>
   );
