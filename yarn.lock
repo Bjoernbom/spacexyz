@@ -5240,6 +5240,11 @@ react-native-screens@^2.4.0:
   dependencies:
     debounce "^1.2.0"
 
+react-native-shared-element@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/react-native-shared-element/-/react-native-shared-element-0.6.1.tgz#fc81d43eb6c8af5c087a174161f34e007039fa25"
+  integrity sha512-hQebSp3sGBFGFblFy1uBN/XRZUb7gTQm37KSiC3KxmqtaFZm2T+984yvA9N04DyopFCVGQkrj1I2MXafNIpP8Q==
+
 react-native-vector-icons@^6.6.0:
   version "6.6.0"
   resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-6.6.0.tgz#66cf004918eb05d90778d64bd42077c1800d481b"
