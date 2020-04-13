@@ -3,7 +3,7 @@ import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {ThemeContext} from 'styled-components';
-import {SCREEN_NAMES} from '../constants';
+import {SCREEN_NAMES} from '../app/constants';
 
 import Homescreen from '../screens/Home.screen.js';
 import Settingsscreen from '../screens/Settings.screen.js';
@@ -60,6 +60,7 @@ export default function Router() {
   return (
     <NavigationContainer theme={navTheme}>
       <Tab.Navigator
+        initialRouteName={SCREEN_NAMES.HOME}
         screenOptions={({route}) => ({
           tabBarIcon: ({focused, color, size}) => {
             const iconName = getTabIcon(route);
@@ -77,10 +78,9 @@ export default function Router() {
           activeTintColor: theme.tabBar.active,
           inactiveTintColor: theme.tabBar.inActive,
           style: {
-            borderTopColor: 'transparent',
+            borderTopColor: 'transparent', // remove ugly line
             backgroundColor: theme.screenBackgrounds.primary,
           },
-          initialRouteName: 'Home',
         }}>
         <Tab.Screen name={SCREEN_NAMES.CONTACT} component={ContactScreen} />
         <Tab.Screen

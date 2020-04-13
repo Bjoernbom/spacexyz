@@ -8,10 +8,10 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {Provider} from 'react-redux';
-import {createStore} from './app/store/store';
+import {createStore} from '../store/store';
 
-import Router from './app/navigation/Navigation';
-import ThemeProvider from './app/services/theme/ThemeProvider';
+import Router from '../navigation/Navigation';
+import ThemeProvider from '../services/theme/ThemeProvider';
 
 export default function App() {
   const store = createStore();

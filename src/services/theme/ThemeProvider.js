@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
-import {statusBar, StatusBar} from 'react-native';
-import PropTypes from 'prop-types';
+import {StatusBar} from 'react-native';
+import propTypes from 'prop-types';
 import {useSelector} from 'react-redux';
 import {ThemeProvider as StyledThemeProvider} from 'styled-components/native';
 
@@ -27,6 +27,6 @@ export default function ThemeProvider({children}) {
   );
 }
 
-ThemeProvider.PropTypes = {
-  children: PropTypes.node.isRequired,
+ThemeProvider.propTypes = {
+  children: propTypes.node.isRequired,
 };
