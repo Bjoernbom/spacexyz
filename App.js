@@ -5,11 +5,12 @@
  * @format
  * @flow strict-local
  */
-
+import 'react-native-gesture-handler';
 import React from 'react';
 import {Provider} from 'react-redux';
-import AppContainer from './app/navigation/Navigation';
 import {createStore} from './app/store/store';
+
+import Router from './app/navigation/Navigation';
 import ThemeProvider from './app/services/theme/ThemeProvider';
 
 export default function App() {
@@ -18,7 +19,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <ThemeProvider>
-        <AppContainer />
+        <Router />
       </ThemeProvider>
     </Provider>
   );

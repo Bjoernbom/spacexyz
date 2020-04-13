@@ -1,44 +1,68 @@
-import React from 'react';
-import {createAppContainer} from 'react-navigation';
-import {createBottomTabNavigator} from 'react-navigation-tabs';
+import React, {useContext, useMemo} from 'react';
+import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {ThemeContext} from 'styled-components';
 
 import Homescreen from '../screens/Home.screen.js';
 import Settingsscreen from '../screens/Settings.screen.js';
 
+const Tab = createBottomTabNavigator();
 
-const RootStack = createBottomTabNavigator(
-  {
-    Home: {
-      screen: Homescreen,
-      navigationOptions: () => ({
-        tabBarIcon: ({tintColor, focused}) => (
-          <Icon name="home" color={tintColor} size={25} />
-        ),
-      }),
-    },
-    Settings: {
-      screen: Settingsscreen,
-      navigationOptions: () => ({
-        tabBarIcon: ({tintColor, forcused}) => (
-          <Icon name="cog" color={tintColor} size={25} />
-        ),
-      }),
-    },
-  },
-  {
-    tabBarOptions: {
-      showLabel: false,
-      activeTintColor: 'tomato',
-      inactiveTintColor: 'gray',
-      style: {
-        backgroundColor: 'transparent',
+function getTabIcon(screen) {
+  let name;
+
+  switch (screen.name) {
+    case 'Home':
+      name = 'home';
+      break;
+    case 'Settings':
+      name = 'Settings';
+      break;
+    default:
+  }
+
+  return name;
+}
+
+export default function Router() {
+  const theme = useContext(ThemeContext);
+
+  const navTheme = useMemo(
+    () => ({
+      ...DefaultTheme,
+      colors: {
+        ...DefaultTheme.colors,
+        background: theme.screenBackgrounds.primary,
       },
-    },
-    initialRouteName: 'Home',
-  },
-);
+    }),
+    [theme.screenBackgrounds.primary],
+  );
 
-const AppContainer = createAppContainer(RootStack);
+  return (
+    <NavigationContainer theme={navTheme}>
+      <Tab.Navigator
+        screenOptions={({route}) => ({
+          tabBarIcon: ({focused, color, size}) => {
+            const iconName = getTabIcon(route);
 
-export default AppContainer;
+            return <Icon name={iconName} color={color} size={size} />;
+          },
+        })}
+        tabBarOptions={{
+          activeTintColor: theme.text.primary,
+          inactiveTintColor: theme.text.primary,
+          style: {
+            borderTopColor: 'transparent',
+            backgroundColor: theme.screenBackgrounds.primary,
+          },
+          initialRouteName: 'Home',
+        }}>
+        <Tab.Screen name="Home" component={Homescreen} />
+        <Tab.Screen name="Settings" component={Settingsscreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
+// const Router = createAppContainer(RootStack);
+// export default Router;
