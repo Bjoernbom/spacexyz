@@ -12,7 +12,7 @@ const RootStack = createBottomTabNavigator(
       screen: Homescreen,
       navigationOptions: () => ({
         tabBarIcon: ({tintColor, focused}) => (
-          <Icon name="rocket" color={tintColor} size={25} />
+          <Icon name="home" color={tintColor} size={25} />
         ),
       }),
     },
@@ -21,7 +21,6 @@ const RootStack = createBottomTabNavigator(
       navigationOptions: () => ({
         tabBarIcon: ({tintColor, forcused}) => (
           <Icon name="rocket" color={tintColor} size={25} />
-          // <Text>Details</Text>
         ),
       }),
     },

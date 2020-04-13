@@ -8,9 +8,15 @@
 
 import React from 'react';
 import AppContainer from './app/navigation/Navigation';
+import {Provider} from 'react-redux';
+import store from './app/store/ConfigureStore';
 
 const App = () => {
-  return <AppContainer />;
+  return (
+    <Provider store={store}>
+      <AppContainer />
+    </Provider>
+  );
 };
 
 export default App;
