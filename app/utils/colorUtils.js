@@ -78,7 +78,11 @@ export const LIGHT_THEME = {
   circleBackgrounds: {
     primary: COLORS.zircon,
   },
-}
+  tabBar: {
+    active: COLORS.nero,
+    inActive: COLORS.gray,
+  },
+};
 
 export const DARK_THEME = {
   name: 'dark',
@@ -129,4 +133,8 @@ export const DARK_THEME = {
   circleBackgrounds: {
     primary: COLORS.stormDust,
   },
-}
+  tabBar: {
+    active: COLORS.white,
+    inActive: COLORS.gray,
+  },
+};
