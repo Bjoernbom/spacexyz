@@ -15,7 +15,7 @@ import ThemeProvider from '../services/theme/ThemeProvider';
 
 export default function App() {
   const store = createStore();
-
+  console.disableYellowBox = true;
   return (
     <Provider store={store}>
       <ThemeProvider>
