@@ -4,15 +4,45 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {ThemeContext} from 'styled-components';
 import {SCREEN_NAMES} from '../app/constants';
+import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
 
 import DashboardScreen from '../features/dashboard/DashboardScreen';
 import Settingsscreen from '../features/settings/SettingsScreen';
 import ContactScreen from '../features/contact/ContactScreen';
 import RocketsScreen from '../features/rockets/RocketsScreen';
+import DetailedListingScreen from '../features/detailedListing/DetailedListingScreen';
 import NerdStuffScreen from '../screens/NerdStuff.screen';
 
 const Tab = createBottomTabNavigator();
+const Dashboard = createSharedElementStackNavigator();
 
+function DashboardRouter() {
+  const theme = useContext(ThemeContext);
+
+  const navTheme = useMemo(
+    () => ({
+      ...DefaultTheme,
+      colors: {
+        ...DefaultTheme.colors,
+        background: theme.screenBackgrounds.primary,
+      },
+    }),
+    [theme.screenBackgrounds.primary],
+  );
+
+  return (
+    <Dashboard.Navigator headerMode="none" theme={navTheme}>
+      <Dashboard.Screen
+        name={SCREEN_NAMES.DASHBOARD}
+        component={DashboardScreen}
+      />
+      <Dashboard.Screen
+        name={SCREEN_NAMES.DETAILED_LISTING}
+        component={DetailedListingScreen}
+      />
+    </Dashboard.Navigator>
+  );
+}
 function getTabIcon(screen) {
   let name;
 
@@ -87,7 +117,7 @@ export default function Router() {
           name={SCREEN_NAMES.NERD_STUFF}
           component={NerdStuffScreen}
         />
-        <Tab.Screen name={SCREEN_NAMES.DASHBOARD} component={DashboardScreen} />
+        <Tab.Screen name={SCREEN_NAMES.DASHBOARD} component={DashboardRouter} />
         <Tab.Screen name={SCREEN_NAMES.CONTACT} component={ContactScreen} />
         <Tab.Screen name={SCREEN_NAMES.SETTINGS} component={Settingsscreen} />
       </Tab.Navigator>

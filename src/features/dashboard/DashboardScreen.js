@@ -1,29 +1,36 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {View, Text, TouchableOpacity} from 'react-native';
 import styled from 'styled-components/native';
+import ListingCard from '../../components/ListingCard';
+import {SharedElement} from 'react-native-shared-element';
+import {SCREEN_NAMES} from '../../app/constants';
 
-const Screen = styled.View`
-  flex-grow: 1;
-  padding: 20px;
-  background-color: ${props => props.theme.screenBackgrounds.primary};
+const Screen = styled.ScrollView`
+  flex: 1;
+  background-color: ${props => props.theme.backgrounds.primary};
 `;
 
 const Content = styled.View`
-  position: absolute;
-  top: 50%;
-  left: 45%;
+  margin-top: 20;
+  align-content: center;
+  flex: 1;
 `;
 
 const Header = styled.Text`
+  padding-top: 60;
+  align-self: center;
   color: ${props => props.theme.text.primary};
 `;
 
-export default function DashboardScreen() {
+export default function DashboardScreen({navigation}) {
   return (
     <Screen>
+      <Header>DashboardScreen</Header>
       <Content>
-        <Header>Dashboard</Header>
+        <SharedElement>
+          <ListingCard
+            onPress={() => navigation.navigate(SCREEN_NAMES.DETAILED_LISTING)}
+          />
+        </SharedElement>
       </Content>
     </Screen>
   );
