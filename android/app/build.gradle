@@ -131,7 +131,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.ludviglundh.portfolio"
+        applicationId "com.ludviglundh.spacexyz"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

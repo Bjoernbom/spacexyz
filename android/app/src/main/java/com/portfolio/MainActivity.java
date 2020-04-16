@@ -1,4 +1,4 @@
-package com.ludviglundh.portfolio;
+package com.ludviglundh.spacexyz;
 
 import com.reactnativenavigation.NavigationActivity;
 
