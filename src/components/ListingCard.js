@@ -1,39 +1,64 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components/native';
+import {SharedElement} from 'react-navigation-shared-element';
 
 const src = '../assets/spacex.jpg';
+
 const Content = styled.TouchableOpacity`
   background-color: ${props => props.theme.backgrounds.secondary};
   height: 400;
   margin-right: 10;
   margin-left: 10;
-  align-items: center;
   padding-bottom: 20;
   margin-bottom: 20;
   border-radius: 7;
 `;
 
-const ImageWrapper = styled.View`
-  margin-top: 2;
-  margin-bottom: 4;
-`;
-
 const HeaderImage = styled.Image`
   height: 180;
-  width: 350;
-  max-width: 100%;
+  width: 390;
   overflow: hidden;
-  margin-top: 10;
-  margin-right: 10;
-  margin-left: 10;
+  overflow: hidden;
+  align-self: center;
 `;
 
-export default function Listing({onPress}) {
+const TextWrapper = styled.View`
+  margin: 10px;
+  align-items: flex-start;
+`;
+
+const Header = styled.Text`
+  color: ${props => props.theme.text.primary};
+  font-size: 24px;
+  align-self: flex-start;
+`;
+
+const Description = styled.Text`
+  align-self: flex-start;
+  margin-top: 6px;
+  flex-basis: content;
+  color: ${props => props.theme.text.primary};
+  font-size: 16px;
+  overflow: hidden;
+`;
+
+export default function ListingCard({onPress}) {
   return (
     <Content onPress={onPress}>
-      <ImageWrapper>
-        <HeaderImage source={require(src)} resizeMode="center" />
-      </ImageWrapper>
+      <SharedElement id="image">
+        <HeaderImage source={require(src)} />
+      </SharedElement>
+      <TextWrapper>
+        <SharedElement id="header">
+          <Header>Mission Name</Header>
+        </SharedElement>
+        <SharedElement id="description">
+          <Description>
+            Raketer är coool! Raketer är coool! Raketer är coool! Raketer är
+            coool! Raketer är coool!
+          </Description>
+        </SharedElement>
+      </TextWrapper>
     </Content>
   );
 }

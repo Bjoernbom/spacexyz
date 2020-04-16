@@ -14,7 +14,14 @@ import DetailedListingScreen from '../features/detailedListing/DetailedListingSc
 import NerdStuffScreen from '../screens/NerdStuff.screen';
 
 const Tab = createBottomTabNavigator();
-const Dashboard = createSharedElementStackNavigator();
+const Dashboard = createSharedElementStackNavigator({
+  headerMode: 'none',
+  defaultNavigationOptions: {
+    cardStyleInterpolator: ({current: {progress}}) => {
+      return {cardStyle: {opacity: progress}};
+    },
+  },
+});
 
 function DashboardRouter() {
   const theme = useContext(ThemeContext);
@@ -31,7 +38,14 @@ function DashboardRouter() {
   );
 
   return (
-    <Dashboard.Navigator headerMode="none" theme={navTheme}>
+    <Dashboard.Navigator
+      theme={navTheme}
+      headerMode="none"
+      screenOptions={{
+        cardStyleInterpolator: ({current: {progress}}) => {
+          return {cardStyle: {opacity: progress}};
+        },
+      }}>
       <Dashboard.Screen
         name={SCREEN_NAMES.DASHBOARD}
         component={DashboardScreen}

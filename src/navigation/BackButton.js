@@ -1,11 +1,13 @@
 import React from 'react';
-import {Text} from 'react-native';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Wrapper = styled.View`
+  padding-top: 45;
   margin-bottom: 15px;
-  padding-horizontal: 10px;
+  padding-horizontal: 5px;
+  position: absolute;
+  zIndex: 100;
 `;
 
 const Button = styled.TouchableOpacity`
@@ -15,7 +17,7 @@ const Button = styled.TouchableOpacity`
 
 const Row = styled.View`
   flex-direction: row;
-  padding-horizontal: 10px;
+  padding-horizontal: 20px;
 `;
 
 const Column = styled.View`
@@ -30,6 +32,17 @@ const IconColumn = styled(Column)`
   margin-right: 5px;
 `;
 
+const BackHeader = styled.Text`
+  font-size: 20;
+  color: ${props => props.theme.text.primary};
+`;
+
+const ItemIcon = styled(Icon).attrs(props => ({
+  color: props.theme.text.primary,
+}))`
+  font-size: 25px;
+`;
+
 const LabelColumn = styled(Column)`
   flex-grow: 1;
   align-items: center;
@@ -40,23 +53,14 @@ export default function BackButton({navigation}) {
   function handleButtonPress() {
     navigation.pop();
   }
-  const styledIcon = (
-    <Icon
-      name="arrow-left"
-      style={{
-        color: props => props.theme.text.secondary,
-      }}
-    />
-  );
 
   return (
     <Wrapper>
       <Button onPress={handleButtonPress}>
         <Row>
-          <IconColumn>{styledIcon}</IconColumn>
-          <LabelColumn>
-            <Text>Back</Text>
-          </LabelColumn>
+          <IconColumn>
+            <ItemIcon name="close" />
+          </IconColumn>
         </Row>
       </Button>
     </Wrapper>
