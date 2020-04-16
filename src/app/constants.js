@@ -6,6 +6,6 @@ export const SCREEN_NAMES = {
   ROCKETS: 'Rockets',
   DETAILS: 'Details',
   NERD_STUFF: 'NerdStuff',
-  LISTING: 'Listing',
+  LISTING: 'ListingCard',
   DETAILED_LISTING: 'DetailedListing',
 };
