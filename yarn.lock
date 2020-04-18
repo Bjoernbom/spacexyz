@@ -1502,6 +1502,19 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
+autoresponsive-common@~1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/autoresponsive-common/-/autoresponsive-common-1.0.1.tgz#6213e798a6879e6b6340d6127a6133a369c0cb9d"
+  integrity sha1-YhPnmKaHnmtjQNYSemEzo2nAy50=
+
+autoresponsive-react-native@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/autoresponsive-react-native/-/autoresponsive-react-native-1.0.9.tgz#11aea77a1e4ceae172257f75b9138f39608a62fb"
+  integrity sha1-Ea6neh5M6uFyJX91uROPOWCKYvs=
+  dependencies:
+    autoresponsive-common "~1.0.0"
+    react-native ">=0.19.0"
+
 aws-sign2@~0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.7.0.tgz#b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8"
@@ -5267,7 +5280,7 @@ react-native-vector-icons@^6.6.0:
     prop-types "^15.6.2"
     yargs "^13.2.2"
 
-react-native@0.62.2:
+react-native@0.62.2, react-native@>=0.19.0:
   version "0.62.2"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.62.2.tgz#d831e11a3178705449142df19a70ac2ca16bad10"
   integrity sha512-gADZZ3jcm2WFTjh8CCBCbl5wRSbdxqZGd+8UpNwLQFgrkp/uHorwAhLNqcd4+fHmADgPBltNL0uR1Vhv47zcOw==
