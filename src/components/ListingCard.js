@@ -36,7 +36,6 @@ const Header = styled.Text`
 const Description = styled.Text`
   align-self: flex-start;
   margin-top: 6px;
-  flex-basis: content;
   color: ${props => props.theme.text.primary};
   font-size: 16px;
   overflow: hidden;
