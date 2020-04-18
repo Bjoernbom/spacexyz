@@ -4,6 +4,10 @@ import DarkThemeToggle from '../../services/theme/DarkThemeToggle';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Support from '../../features/support/Support';
+import DeviceInfo from 'react-native-device-info';
+
+const versionString = DeviceInfo.getVersion();
+console.log(versionString)
 
 const Screen = styled.View`
   flex-grow: 1;
@@ -70,6 +74,14 @@ const ItemIcon = styled(Icon).attrs(props => ({
 
 const Space = styled.View`
   height: 20px;
+`;
+
+const Version = styled.Text`
+  font-size: 14;
+  margin-top: 2px;
+  color: ${props => props.theme.text.light};
+  justify-content: center;
+  align-self: center;
 `;
 
 export default function SettingsScreen() {
@@ -169,6 +181,7 @@ export default function SettingsScreen() {
             <Switch />
           </ToggleWrapper>
         </List>
+        <Version>Version: {versionString}</Version>
       </Content>
     </Screen>
   );
