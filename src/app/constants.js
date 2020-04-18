@@ -8,4 +8,5 @@ export const SCREEN_NAMES = {
   NERD_STUFF: 'NerdStuff',
   LISTING: 'ListingCard',
   DETAILED_LISTING: 'DetailedListing',
+  ROCKET_DETAILS: 'RocketDetails',
 };
