@@ -33,7 +33,7 @@ const Header = styled.Text`
   align-self: flex-start;
 `;
 
-const Description = styled.Text`
+const Label = styled.Text`
   align-self: flex-start;
   margin-top: 6px;
   color: ${props => props.theme.text.primary};
@@ -51,12 +51,10 @@ export default function ListingCard({onPress}) {
         <SharedElement id="header">
           <Header>Mission Name</Header>
         </SharedElement>
-        <SharedElement id="description">
-          <Description>
-            Raketer är coool! Raketer är coool! Raketer är coool! Raketer är
-            coool! Raketer är coool!
-          </Description>
-        </SharedElement>
+        <Label>Datum</Label>
+        <Label>Flown before</Label>
+        <Label>Landing site</Label>
+        <Label>Mission</Label>
       </TextWrapper>
     </Content>
   );
