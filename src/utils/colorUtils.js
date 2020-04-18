@@ -34,6 +34,7 @@ export const LIGHT_THEME = {
   text: {
     primary: COLORS.nero,
     secondary: COLORS.white,
+    light: COLORS.shipGray,
   },
   borders: {
     primary: COLORS.lightGray,
@@ -89,6 +90,7 @@ export const DARK_THEME = {
   text: {
     primary: COLORS.white,
     secondary: COLORS.nero,
+    light: COLORS.shipGray,
   },
   borders: {
     primary: COLORS.shipGray,
