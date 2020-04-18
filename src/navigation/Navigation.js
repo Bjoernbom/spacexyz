@@ -12,9 +12,19 @@ import ContactScreen from '../features/contact/ContactScreen';
 import RocketsScreen from '../features/rockets/RocketsScreen';
 import DetailedListingScreen from '../features/detailedListing/DetailedListingScreen';
 import NerdStuffScreen from '../screens/NerdStuff.screen';
+import RocketDetailsScreen from '../features/rockets/RocketDetailScreen';
 
 const Tab = createBottomTabNavigator();
 const Dashboard = createSharedElementStackNavigator({
+  headerMode: 'none',
+  defaultNavigationOptions: {
+    cardStyleInterpolator: ({current: {progress}}) => {
+      return {cardStyle: {opacity: progress}};
+    },
+  },
+});
+
+const Rockets = createSharedElementStackNavigator({
   headerMode: 'none',
   defaultNavigationOptions: {
     cardStyleInterpolator: ({current: {progress}}) => {
@@ -57,6 +67,39 @@ function DashboardRouter() {
     </Dashboard.Navigator>
   );
 }
+
+function RocketRouter() {
+  const theme = useContext(ThemeContext);
+
+  const navTheme = useMemo(
+    () => ({
+      ...DefaultTheme,
+      colors: {
+        ...DefaultTheme.colors,
+        background: theme.screenBackgrounds.primary,
+      },
+    }),
+    [theme.screenBackgrounds.primary],
+  );
+
+  return (
+    <Rockets.Navigator
+      theme={navTheme}
+      headerMode="none"
+      screenOptions={{
+        cardStyleInterpolator: ({current: {progress}}) => {
+          return {cardStyle: {opacity: progress}};
+        },
+      }}>
+      <Rockets.Screen name={SCREEN_NAMES.ROCKETS} component={RocketsScreen} />
+      <Rockets.Screen
+        name={SCREEN_NAMES.ROCKET_DETAILS}
+        component={RocketDetailsScreen}
+      />
+    </Rockets.Navigator>
+  );
+}
+
 function getTabIcon(screen) {
   let name;
 
@@ -126,7 +169,7 @@ export default function Router() {
             backgroundColor: theme.screenBackgrounds.primary,
           },
         }}>
-        <Tab.Screen name={SCREEN_NAMES.ROCKETS} component={RocketsScreen} />
+        <Tab.Screen name={SCREEN_NAMES.ROCKETS} component={RocketRouter} />
         <Tab.Screen
           name={SCREEN_NAMES.NERD_STUFF}
           component={NerdStuffScreen}
