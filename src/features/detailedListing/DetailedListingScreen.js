@@ -79,40 +79,12 @@ function DetailedListingScreen({navigation}) {
             <SharedElement id="header">
               <Header>Mission Name</Header>
             </SharedElement>
-            <SharedElement id="description">
-              <Description>
-                Raketer är coool! Raketer är coool! Raketer är coool! Raketer är
-                coool! Raketer är coool!
-              </Description>
-            </SharedElement>
+            <Description>
+              Raketer är coool! Raketer är coool! Raketer är coool! Raketer är
+              coool! Raketer är coool!
+            </Description>
             <Reg>Raketnamn</Reg>
             <Reg>2020-13-37</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
-            <Reg>Landningplats</Reg>
             <Reg>Landningplats</Reg>
           </TextWrapper>
         </Content>
@@ -122,7 +94,7 @@ function DetailedListingScreen({navigation}) {
 }
 
 DetailedListingScreen.sharedElements = () => {
-  return ['image', 'header', 'description'];
+  return ['image', 'header'];
 };
 
 export default DetailedListingScreen;
