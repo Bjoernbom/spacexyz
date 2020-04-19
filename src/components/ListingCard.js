@@ -6,18 +6,16 @@ const src = '../assets/spacex.jpg';
 
 const Content = styled.TouchableOpacity`
   background-color: ${props => props.theme.backgrounds.secondary};
-  height: 400;
-  margin-right: 10;
-  margin-left: 10;
+  height: 330;
   padding-bottom: 20;
   margin-bottom: 20;
-  border-radius: 7;
+  border-radius: 8;
+  overflow: hidden; 
 `;
 
 const HeaderImage = styled.Image`
   height: 180;
-  width: 390;
-  overflow: hidden;
+  width: 100%;
   overflow: hidden;
   align-self: center;
 `;
