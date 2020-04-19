@@ -1,7 +1,11 @@
-import React from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, {useRef, useState, useEffect} from 'react';
+import {Text, View} from 'react-native';
 import styled from 'styled-components';
 import Icon from 'react-native-vector-icons/FontAwesome';
-const src = '../assets/header.jpg';
+import Moment from 'moment';
+import CountDown from '../components/CountDown';
+const src = '../assets/header_night_2.jpg';
 
 const Wrapper = styled.View`
   width: 100%;
@@ -25,6 +29,7 @@ const TextContainer = styled.View`
 
 const TitleWrapper = styled.View`
   flex-direction: row;
+  align-self: center;
 `;
 
 const Title = styled.Text`
@@ -37,7 +42,7 @@ const Title = styled.Text`
 const MissionTitle = styled.Text`
   justify-content: center;
   align-self: center;
-  font-size: 22px;
+  font-size: 16px;
   color: ${props => props.theme.text.white};
 `;
 
@@ -62,16 +67,38 @@ const ItemIcon = styled(Icon).attrs(props => ({
   margin-right: 6px;
 `;
 
+const CountdownContainer = styled.View`
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+`;
+
 export default function UpcomingLaunchComponent() {
+  function CountdownStuff() {
+    const launchMoment = Moment('2020-05-01T07:43:01.065Z').utc(true);
+    console.log('launchMoment', launchMoment);
+    return (
+      <CountdownContainer>
+        <CountDown
+          size={20}
+          until={99}
+          digitStyle={{backgroundColor: '#222222'}}
+          digitTxtStyle={{color: '#ffffff'}}
+          timeLabelStyle={{color: '#ffffff'}}
+        />
+      </CountdownContainer>
+    );
+  }
+
   return (
     <Wrapper>
       <TextContainer>
         <TitleWrapper>
           <ItemIcon name="info" />
-          <Title>Time to next Launch</Title>
-          <MissionTitle>Crs-III</MissionTitle>
+          <Title>Time until next Launch</Title>
         </TitleWrapper>
-        <Countdown>1 day, 13 hours and 25 seconds </Countdown>
+        <MissionTitle>CRS-III</MissionTitle>
+        <CountdownStuff />
       </TextContainer>
       <HeaderImage source={require(src)} reziseMode="stretch" />
     </Wrapper>
