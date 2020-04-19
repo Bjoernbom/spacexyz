@@ -69,22 +69,8 @@ function DashboardRouter() {
 }
 
 function RocketRouter() {
-  const theme = useContext(ThemeContext);
-
-  const navTheme = useMemo(
-    () => ({
-      ...DefaultTheme,
-      colors: {
-        ...DefaultTheme.colors,
-        background: theme.screenBackgrounds.primary,
-      },
-    }),
-    [theme.screenBackgrounds.primary],
-  );
-
   return (
     <Rockets.Navigator
-      theme={navTheme}
       headerMode="none"
       screenOptions={{
         cardStyleInterpolator: ({current: {progress}}) => {
