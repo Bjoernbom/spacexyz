@@ -1,5 +1,5 @@
 import React from 'react';
-import {Alert, Switch, } from 'react-native';
+import {Alert, Switch} from 'react-native';
 import DarkThemeToggle from '../../services/theme/DarkThemeToggle';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -112,24 +112,6 @@ export default function SettingsScreen() {
       <Content>
         <Header>Theme</Header>
         <List>
-          <ToggleWrapper>
-            <LabelWrapper>
-              <InfoButton onPress={handleShowInfo}>
-                <ItemIcon name="info" />
-              </InfoButton>
-              <Label>Dark Theme</Label>
-            </LabelWrapper>
-            <DarkThemeToggle />
-          </ToggleWrapper>
-          <ToggleWrapper>
-            <LabelWrapper>
-              <InfoButton onPress={handleShowInfo}>
-                <ItemIcon name="info" />
-              </InfoButton>
-              <Label>Dark Theme</Label>
-            </LabelWrapper>
-            <DarkThemeToggle />
-          </ToggleWrapper>
           <ToggleWrapper>
             <LabelWrapper>
               <InfoButton onPress={handleShowInfo}>
