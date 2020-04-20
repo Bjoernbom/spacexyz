@@ -8,7 +8,7 @@ const src = '../assets/spacex.jpg';
 
 const Content = styled.TouchableOpacity`
   background-color: ${props => props.theme.backgrounds.secondary};
-  height: 330;
+  height: 350;
   padding-bottom: 20;
   margin-bottom: 20;
   border-radius: 8;
@@ -29,7 +29,8 @@ const TextWrapper = styled.View`
 
 const Header = styled.Text`
   color: ${props => props.theme.text.primary};
-  font-size: 24px;
+  font-size: 23px;
+  margin-right: 4px;
   align-self: flex-start;
 `;
 
@@ -46,13 +47,17 @@ const LabelWrapper = styled.View`
   align-items: center;
   justify-content: center;
   margin-left: 2px;
+  margin-top: 1px;
+`;
+
+const HeaderWrapper = styled.View`
+  flex-direction: row;
 `;
 
 const ItemIcon = styled(Icon).attrs(props => ({
   color: props.theme.text.white,
 }))`
   font-size: 20px;
-  padding-top: 4px;
   margin-right: 10px;
 `;
 
