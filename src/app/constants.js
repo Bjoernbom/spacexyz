@@ -5,7 +5,7 @@ export const SCREEN_NAMES = {
   NEWS: 'News',
   ROCKETS: 'Rockets',
   DETAILS: 'Details',
-  NERD_STUFF: 'NerdStuff',
+  LAUNCHES: 'Launches',
   LISTING: 'ListingCard',
   DETAILED_LISTING: 'DetailedListing',
   ROCKET_DETAILS: 'RocketDetails',

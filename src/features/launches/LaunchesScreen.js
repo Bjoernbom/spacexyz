@@ -19,11 +19,11 @@ const Header = styled.Text`
   color: ${props => props.theme.text.primary};
 `;
 
-export default function NerdStuffScreen() {
+export default function LaunchedScreen() {
   return (
     <Screen>
       <Content>
-        <Header>Nerd Stuff</Header>
+        <Header>launches</Header>
       </Content>
     </Screen>
   );

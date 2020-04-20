@@ -11,7 +11,7 @@ import Settingsscreen from '../features/settings/SettingsScreen';
 import ContactScreen from '../features/contact/ContactScreen';
 import RocketsScreen from '../features/rockets/RocketsScreen';
 import DetailedListingScreen from '../features/detailedListing/DetailedListingScreen';
-import NerdStuffScreen from '../screens/NerdStuff.screen';
+import LaunchesScreen from '../features/launches/LaunchesScreen';
 import RocketDetailsScreen from '../features/rockets/RocketDetailScreen';
 
 const Tab = createBottomTabNavigator();
@@ -106,7 +106,7 @@ function getTabIcon(screen) {
       name = 'rocket';
       break;
 
-    case SCREEN_NAMES.NERD_STUFF:
+    case SCREEN_NAMES.LAUNCHES:
       name = 'music';
       break;
 
@@ -156,10 +156,7 @@ export default function Router() {
           },
         }}>
         <Tab.Screen name={SCREEN_NAMES.ROCKETS} component={RocketRouter} />
-        <Tab.Screen
-          name={SCREEN_NAMES.NERD_STUFF}
-          component={NerdStuffScreen}
-        />
+        <Tab.Screen name={SCREEN_NAMES.LAUNCHES} component={LaunchesScreen} />
         <Tab.Screen name={SCREEN_NAMES.DASHBOARD} component={DashboardRouter} />
         <Tab.Screen name={SCREEN_NAMES.CONTACT} component={ContactScreen} />
         <Tab.Screen name={SCREEN_NAMES.SETTINGS} component={Settingsscreen} />
