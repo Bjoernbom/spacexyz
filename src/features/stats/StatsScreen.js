@@ -19,11 +19,11 @@ const Header = styled.Text`
   color: ${props => props.theme.text.primary};
 `;
 
-export default function ContactScreen() {
+export default function StatsScreen() {
   return (
     <Screen>
       <Content>
-        <Header>Contact</Header>
+        <Header>Stats</Header>
       </Content>
     </Screen>
   );

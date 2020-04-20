@@ -1,7 +1,7 @@
 export const SCREEN_NAMES = {
   DASHBOARD: 'Dashboard',
   SETTINGS: 'Settings',
-  CONTACT: 'Contact',
+  STATS: 'Stats',
   NEWS: 'News',
   ROCKETS: 'Rockets',
   DETAILS: 'Details',
