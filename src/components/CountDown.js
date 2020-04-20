@@ -140,7 +140,10 @@ class CountDown extends React.Component {
       <View
         style={[
           styles.digitCont,
-          {width: size * 2.3, height: size * 2.6, backgroundColor: props => props.theme.boxbackgrounds.primary},
+          {
+            width: size * 2.3,
+            height: size * 2.6,
+          },
           digitStyle,
         ]}>
         <Text style={[styles.digitTxt, {fontSize: size}, digitTxtStyle]}>
@@ -193,6 +196,7 @@ class CountDown extends React.Component {
       minutes,
       seconds,
     ).split(':');
+    console.log('days', days);
     const Component = this.props.onPress ? TouchableOpacity : View;
 
     return (
