@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {Animated, Dimensions} from 'react-native';
 import BackButton from '../../navigation/BackButton';
-import Screen from '../../components/Screen';
 import {SharedElement} from 'react-navigation-shared-element';
 import styled from 'styled-components/native';
 const src = '../../assets/spacex.jpg';
@@ -9,6 +8,10 @@ const src = '../../assets/spacex.jpg';
 const screenHeight = Dimensions.get('window').height;
 const HEADER_SCROLL_DISTANCE = screenHeight / 3;
 
+const Screen = styled.View`
+  flex: 1;
+  background-color: ${props => props.theme.backgrounds.primary};
+`;
 const Content = styled.View`
   height: 100%;
   background-color: ${props => props.theme.backgrounds.primary};
