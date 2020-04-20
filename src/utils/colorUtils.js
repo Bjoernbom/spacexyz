@@ -50,6 +50,7 @@ export const LIGHT_THEME = {
     primary: COLORS.gallery,
     secondary: COLORS.zircon,
     tertiary: COLORS.lightGray,
+    white: COLORS.white,
   },
   accents: {
     primary: COLORS.silverSand,
@@ -107,6 +108,7 @@ export const DARK_THEME = {
     primary: COLORS.nero,
     secondary: COLORS.montana,
     tertiary: COLORS.shipGray,
+    white: COLORS.white,
   },
   accents: {
     primary: COLORS.stormDust,
