@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components/native';
 import ListingCard from '../../components/ListingCard';
 import Screen from '../../components/Screen';
 import {SCREEN_NAMES} from '../../app/constants';
+import {dashboardData} from '../../api/mock';
 import UpcomingLaunchComponent from '../../components/UpcomingLaunch';
 
 const TopContent = styled.View`
@@ -21,22 +22,16 @@ const Header = styled.Text`
 `;
 
 export default function DashboardScreen({navigation}) {
+
   return (
     <Screen>
       <TopContent>
         <Header>Dashboard</Header>
         <UpcomingLaunchComponent />
       </TopContent>
-      <Space />
-      <Header>News</Header>
       <Content>
         <ListingCard
-          onPress={() => navigation.navigate(SCREEN_NAMES.DETAILED_LISTING)}
-        />
-        <ListingCard
-          onPress={() => navigation.navigate(SCREEN_NAMES.DETAILED_LISTING)}
-        />
-        <ListingCard
+          data={dashboardData}
           onPress={() => navigation.navigate(SCREEN_NAMES.DETAILED_LISTING)}
         />
       </Content>

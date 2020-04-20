@@ -28,7 +28,6 @@ const HeaderImage = styled.Image`
 let id;
 function RocketDetailScreen({navigation, route}) {
   id = route.params.id;
-  console.log('params', route);
 
   return (
     <Screen>

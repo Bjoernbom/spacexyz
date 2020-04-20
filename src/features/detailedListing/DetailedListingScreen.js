@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Animated, Dimensions} from 'react-native';
 import BackButton from '../../navigation/BackButton';
 import {SharedElement} from 'react-navigation-shared-element';
+import {dashboardData} from '../../api/mock';
 import styled from 'styled-components/native';
 const src = '../../assets/spacex.jpg';
 
@@ -53,6 +54,8 @@ const Reg = styled.Text`
 
 function DetailedListingScreen({navigation}) {
   const [scrollY] = useState(new Animated.Value(0));
+  const {missionName, flightNumber, hasFlewnBefore} = dashboardData;
+  const reused = hasFlewnBefore ? 'Has flewn before' : 'First flight';
 
   const imageOpacity = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE / 2, HEADER_SCROLL_DISTANCE],
@@ -79,9 +82,7 @@ function DetailedListingScreen({navigation}) {
             </SharedElement>
           </Animated.View>
           <TextWrapper>
-            <SharedElement id="header">
-              <Header>Mission Name</Header>
-            </SharedElement>
+            <Header>{missionName}</Header>
             <Description>
               Raketer är coool! Raketer är coool! Raketer är coool! Raketer är
               coool! Raketer är coool!
@@ -97,7 +98,7 @@ function DetailedListingScreen({navigation}) {
 }
 
 DetailedListingScreen.sharedElements = () => {
-  return ['image', 'header'];
+  return ['image'];
 };
 
 export default DetailedListingScreen;
