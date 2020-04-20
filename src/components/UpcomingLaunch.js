@@ -4,6 +4,7 @@ import {Text, View} from 'react-native';
 import styled from 'styled-components';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Moment from 'moment';
+import tz from 'moment-timezone';
 import CountDown from '../components/CountDown';
 const src = '../assets/header_night_2.jpg';
 
@@ -75,13 +76,16 @@ const CountdownContainer = styled.View`
 
 export default function UpcomingLaunchComponent() {
   function CountdownStuff() {
-    const launchMoment = Moment('2020-05-01T07:43:01.065Z').utc(true);
-    console.log('launchMoment', launchMoment);
+    const launchMoment = Moment('2020-08-01T07:43:01.065Z')
+      .utc(true)
+      .unix();
+    const toSeconds = Moment.duration(launchMoment).asSeconds();
+
     return (
       <CountdownContainer>
         <CountDown
-          size={20}
-          until={99}
+          size={22}
+          until={toSeconds}
           digitStyle={{backgroundColor: '#222222'}}
           digitTxtStyle={{color: '#ffffff'}}
           timeLabelStyle={{color: '#ffffff'}}
