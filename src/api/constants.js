@@ -1,7 +1,7 @@
 // can be found at https://docs.spacexdata.com/?version=latest#intro
 export const ENDPOINTS = {
   url: {
-    url: 'https://api.spacexdata.com/v3/',
+    baseUrl: 'https://api.spacexdata.com/v3/',
     launches: {
       all: 'launches',
       upcoming: 'upcoming',
