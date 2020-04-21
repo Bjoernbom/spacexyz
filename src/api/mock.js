@@ -172,6 +172,7 @@ export const dashboardData = {
     missionPatch: mock.links.mission_patch,
     videoLink: mock.links.video_link,
   },
+  rocketBlock: mock.rocket.first_stage.cores[0].block,
   hasFlewnBefore: mock.rocket.first_stage.cores[0].reused,
   willAttemptLanding: mock.rocket.first_stage.cores[0].landing_intent,
 };
