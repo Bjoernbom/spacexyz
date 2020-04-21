@@ -12,7 +12,7 @@ const TopContent = styled.View`
 const Content = styled.ScrollView``;
 
 const Space = styled.View`
-  height: 20px;
+  height: 16px;
 `;
 
 const Header = styled.Text`
@@ -29,6 +29,7 @@ export default function DashboardScreen({navigation}) {
         <Header>Dashboard</Header>
         <UpcomingLaunchComponent />
       </TopContent>
+      <Space />
       <Content>
         <ListingCard
           data={dashboardData}
