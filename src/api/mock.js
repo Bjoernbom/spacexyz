@@ -175,4 +175,6 @@ export const dashboardData = {
   rocketBlock: mock.rocket.first_stage.cores[0].block,
   hasFlewnBefore: mock.rocket.first_stage.cores[0].reused,
   willAttemptLanding: mock.rocket.first_stage.cores[0].landing_intent,
+  landingSite: mock.rocket.first_stage.cores[0].landing_vehicle,
+  orbit: mock.rocket.second_stage.payloads[0].orbit,
 };
