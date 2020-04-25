@@ -85,6 +85,10 @@ export const LIGHT_THEME = {
     active: COLORS.nero,
     inActive: COLORS.gray,
   },
+  shadows: {
+    primary: COLORS.black,
+    secondary: COLORS.white,
+  },
 };
 
 export const DARK_THEME = {
@@ -142,5 +146,9 @@ export const DARK_THEME = {
   tabBar: {
     active: COLORS.white,
     inActive: COLORS.gray,
+  },
+  shadows: {
+    primary: COLORS.black,
+    secondary: COLORS.white,
   },
 };
